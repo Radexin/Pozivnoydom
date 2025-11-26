@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+/* Базовые стили для типографики */
+h1 {
+  @apply text-4xl font-bold leading-tight;
+}
+
+h2 {
+  @apply text-3xl font-bold leading-snug;
+}
+
+h3 {
+  @apply text-xl font-semibold leading-normal;
+}
+
+h4 {
+  @apply text-lg font-semibold leading-normal;
+}
+
+p {
+  @apply text-base leading-relaxed;
+}
+
+/* Настройки размера шрифта */
+:root[data-font-size="normal"] {
+  font-size: 16px;
+}
+
+:root[data-font-size="large"] {
+  font-size: 20px;
+}
+
+:root[data-font-size="xlarge"] {
+  font-size: 24px;
+}
+
+/* Цветовые схемы */
+/* Обычная схема - по умолчанию */
+:root[data-color-scheme="normal"] {
+  /* Стили по умолчанию */
+}
+
+/* Высокий контраст */
+:root[data-color-scheme="highContrast"] {
+  --color-bg: #ffffff;
+  --color-text: #000000;
+  --color-primary: #0000ff;
+  --color-secondary: #ffff00;
+}
+
+:root[data-color-scheme="highContrast"] body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+:root[data-color-scheme="highContrast"] .bg-slate-900,
+:root[data-color-scheme="highContrast"] .bg-slate-800 {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+:root[data-color-scheme="highContrast"] .bg-white {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+:root[data-color-scheme="highContrast"] .text-white {
+  color: #ffffff !important;
+}
+
+:root[data-color-scheme="highContrast"] .text-slate-600,
+:root[data-color-scheme="highContrast"] .text-slate-700 {
+  color: #000000 !important;
+}
+
+:root[data-color-scheme="highContrast"] button,
+:root[data-color-scheme="highContrast"] a {
+  border: 2px solid currentColor !important;
+}
+
+/* Инвертированные цвета */
+:root[data-color-scheme="inverted"] {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+:root[data-color-scheme="inverted"] img,
+:root[data-color-scheme="inverted"] video {
+  filter: invert(1) hue-rotate(180deg);
+}
+
+/* Плавные переходы */
+* {
+  transition: font-size 0.3s ease;
+}
